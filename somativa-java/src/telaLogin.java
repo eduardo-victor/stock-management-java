@@ -2,35 +2,37 @@ import javax.swing.*;
 import java.awt.*;
 
 public class telaLogin extends JFrame {
-    private JLabel username = new JLabel("Username: ");
+    private JLabel username = new JLabel("USERNAME: ");
     private JTextField userLogin = new JTextField(100);
-    private JLabel password = new JLabel("Password: ");
+    private JLabel password = new JLabel("PASSWORD: ");
     private JTextField userPass = new JTextField(100);
     private JButton login = new JButton("Login");
     private JButton pass = new JButton("Register");
 
     public telaLogin(){
         super("SM - Login and Register");
+        setLayout(null);
 
-        username.setBounds(40,80,200,40);
-        username.setFont(new Font("Montserrato", Font.BOLD, 12));
+        username.setBounds(100,80,200,40);
+        username.setFont(new Font("Montserrat", Font.BOLD, 16));
         username.setForeground(Color.white);
         add(username);
 
-        userLogin.setBounds(160, 240, 30, 80);
+        userLogin.setBounds(220, 90, 150, 20);
         add(userLogin);
 
-        password.setFont(new Font("Montserrato", Font.BOLD, 12));
+        password.setBounds(100, 150, 200, 40);
+        password.setFont(new Font("Montserrat", Font.BOLD, 16));
         password.setForeground(Color.white);
-
         add(password);
 
-        login.setBackground(Color.yellow);
-        add(login);
-        pass.setBackground(Color.yellow);
-        add(pass);
+        userPass.setBounds(220, 160, 150, 20);
+        add(userPass);
+
 
         setSize(450, 350);
+
+        getContentPane().setBackground(Color.black);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }

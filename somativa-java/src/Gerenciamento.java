@@ -8,6 +8,7 @@ public class Gerenciamento extends JFrame {
 
     public ArrayList<Produto> lista = new ArrayList<Produto>();
 
+
     private JButton addProduto = new JButton("Adicionar Produto");
     private JButton visuProduto = new JButton("Visualizar Produtos");
     private JButton delProduto = new JButton("Deletar Produto");
@@ -30,6 +31,7 @@ public class Gerenciamento extends JFrame {
         getContentPane().setBackground(Color.black);
         iniciar();
         setSize(540, 400);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 

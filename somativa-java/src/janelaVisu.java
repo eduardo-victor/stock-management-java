@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class janelaVisu extends JFrame {
@@ -16,6 +17,7 @@ public class janelaVisu extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(450, 300);
         iniciarVisu();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -34,7 +36,7 @@ public class janelaVisu extends JFrame {
     }
 
     public class visualizarProdutos implements ActionListener {
-
+        telaLogin user;
         ArrayList<Produto> lista = new ArrayList<Produto>();
 
         @Override
@@ -45,6 +47,12 @@ public class janelaVisu extends JFrame {
             } else {
                 janelaVisu janelaVisu = new janelaVisu(lista);
                 janelaVisu.setVisible(true);
+                try {
+                    user.logLista.add("O usuário " + user.usuario + " visualizou os produtos - " + user.logTxt.dataFormatada );
+                    user.logTxt.criarLog(user.logLista);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         }
     }
